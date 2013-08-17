@@ -8,7 +8,7 @@ gem 'rails', '3.2.13'
 gem 'sqlite3'
 gem 'activeadmin'
 
-gem 'activeadmin'
+
 gem 'jquery-ui-rails'
 gem 'meta_search'
 
@@ -22,8 +22,9 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'twitter-bootstrap-rails'
 end
-
+gem "therubyracer", ">= 0.11.4"
 gem 'jquery-rails', "~> 2.3.0"
 
 # To use ActiveModel has_secure_password
@@ -40,3 +41,4 @@ gem 'jquery-rails', "~> 2.3.0"
 
 # To use debugger
 # gem 'debugger'
+gem 'simple_form'

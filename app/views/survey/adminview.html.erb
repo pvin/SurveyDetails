@@ -1,0 +1,22 @@
+<div align="center" style="margin-top: 100px" >
+	<th><strong><h3 style="color:skyblue;"> Survey Results</h3></strong></th>
+<form method="post" action="/editques">
+<table  cellpadding="5" class="table table-striped table-hover ">
+		<th style="color:skyblue;">		
+			Questions
+		</th >
+		
+		<th style="color:skyblue;">		
+			Answers
+		</th>
+	
+		<% @result.each do |q|%>
+		<tr>
+			<td><%= q.ques%></td>
+			<td><%= q.ans%></td>
+		</tr>
+		<% end %>	
+</table>
+  <td><input type="submit" value="Back" class="btn btn-info"/></td>
+</form>
+</div>

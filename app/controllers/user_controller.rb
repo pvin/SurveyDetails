@@ -4,14 +4,25 @@ class UserController < ApplicationController
 
   end
   def success
-    puts
-    params.each do |key,value|
-      Rails.logger.warn "Param #{key}: #{value}"
+    @tem = 1
+    params.each do |key, value|
       ques = User.new
-      ques.ques = key
-      ques.ans = value
-      ques.save
+      if(@tem.even?)
+        if(value!="action")
+          @ans_val = value
+          ques.ques = @ques_val
+          ques.ans = @ans_val
+          ques.save
+        end
+      else
+        if(value!="success")
+          @ques_val = value
+        end
+      end
+      @tem+=1
     end
-    render text: "Data Saved"
+    render text: "<div style='color:skyblue'><h1>Data Saved.........</h1></div>"
   end
+
+
 end

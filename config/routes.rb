@@ -1,7 +1,5 @@
 SurveyDetails::Application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-
+  root :to => 'user#survey'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -66,7 +64,7 @@ SurveyDetails::Application.routes.draw do
   match 'delete' => "survey#delete"
   match 'adminn' => "survey#adminn"
   match 'check' => "survey#check"
-  
+  match 'adminview' => "survey#adminview"
   match 'survey' => "user#survey"
   match 'success' => "user#success"
 end

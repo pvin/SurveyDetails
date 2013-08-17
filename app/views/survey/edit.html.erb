@@ -1,24 +1,41 @@
-<body bgcolor="#0099FF">
-<form method="post" action="/update">
-<table>
-	<tr>
-		<td>
-			<h2>Edit Survey Question</h2>
-		</td>
-	</tr>
-	<tr>
-		<td>Question</td>
-		<td><input type="text" name="question" value="<%= @question_value%>"/></td>
-	</tr>
-	<tr>
-		<td>Options</td>
-		<td><textarea name="options" rows="5"><%= @option%></textarea></td>
-	</tr>
-	<tr>
-		<td><input type="submit" value="Update"/></td>
-		<td><input type="reset" value="Cancel"/></td>	
-		<td><input type="hidden" value="<%= @ques_id%>" name="q_id"/></td>
-	</tr>
-</table>
+<div align="center" style="margin-top: 100px" >
+  <table cellpadding="10">
+    <tr>
+      <th><strong><h3 style="color:skyblue;"> Survey Question</h3></strong></th>
+    </tr>
+    <tr>
+      <td>
+        <form method="post" action="/update" class="form-horizontal">
+          <div class="control-group">
+            <label class="control-label" style="color:skyblue;" for="inputEmail">Question</label>
+            <div class="controls"  >
+              <input type="text" name="question" value="<%= @question_value%>" placeholder="Question..." style="width:322px;"/>
+            </div>
+          </div>
 
-</form>
+          <div class="control-group">
+            <label class="control-label" style="color:skyblue;" for="inputProduct Category">Options:</label>
+            <div class="controls">
+              <textarea name="options" placeholder="comments..."  rows="5" style="width: 326px;"><%= @option%></textarea>
+            </div>
+          </div>
+
+
+
+          <div class="control-group">
+            <div class="controls">
+              <button type="submit" class="btn btn-info" >Update Question</button>
+              <input type="hidden" value="<%= @ques_id%>" name="q_id"/>
+              <button type="reset" class="btn btn-info">Cancel</button>
+
+            </div>
+          </div>
+        </form>
+      </td>
+    </tr>
+
+
+  </table>
+
+
+</div>
