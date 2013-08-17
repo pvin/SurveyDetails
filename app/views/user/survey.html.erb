@@ -1,0 +1,48 @@
+<body bgcolor="#0099FF">
+<h1>Survey on Top Four Technology</h1>
+<form method="post" action="/success" >
+
+
+
+<table cellpadding="5">
+
+
+		<th>		
+			Questions
+		</th>
+		
+		<th>		
+			Options
+		</th>
+		
+		
+		<% @count = 1 %>	
+			
+		
+		<% @ques.each do |q|%>
+		<tr>
+			<td><%= q.question %></td>
+			<input type="hidden" name="ques<%= @count  %>" value="<%= q.question %>" />
+			<% questions = q.options.split(",") %>
+			<% %>		
+			<td>
+				
+				<select name="ans<%= @count  %>">
+					<% questions.each do |q|%>
+						<option value="<%= q %>">"<%= q %>"</option>
+					<% end %>
+				</select>
+				
+			</td>
+		<% @count = @count + 1%>
+		</tr>
+		<% end %>
+	<tr>
+		<td><input type="submit" value="Submit Answers"/></td>
+		<td><input type="reset" value="Cancel"/></td>	
+	</tr>
+
+
+</table>
+</form>
+

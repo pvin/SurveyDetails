@@ -1,0 +1,25 @@
+<body bgcolor="#0099FF">
+<form method="post" action="/addques">
+<table border="" cellpadding="5">
+		<th>		
+			Questions
+		</th>
+		
+		<th>		
+			Options
+		</th>
+		
+		<th>		
+			Edit Survey Questions
+		</th>
+	
+		<% @ques.each do |q|%>
+		<tr>
+			<td><%= q.question%></td>
+			<td><%= q.options%></td>
+			<td><a href="/edit?q_id=<%= q.id%>">Edit /</a><a href="/delete?q_id=<%= q.id%>">Delete</a></td>
+		</tr>
+		<% end %>	
+</table>
+  <td><input type="submit" value="Create Question"/></td>
+</form>
